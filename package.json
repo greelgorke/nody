@@ -1,0 +1,19 @@
+{
+  "name": "ninja-dragon",
+  "version": "0.0.0",
+  "description": "Toolkit for streaming architecture",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test -R spec -u bdd"
+  },
+  "keywords": [
+    "stream",
+    "architecture",
+    "flow",
+    "controll",
+    "streams",
+    "utils"
+  ],
+  "author": "greelgorke <greelgorke@gmail.com> (http://greelgorke.tumblr.com)",
+  "license": "MIT"
+}
