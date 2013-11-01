@@ -1,24 +1,29 @@
-module.exports = function pipeable ( nd ) {
-  var proto = Object.getPrototypeOf(nd)
+var CONST = require('./constants')
 
-  nd._shouldProceed = null
+module.exports = function pipeable ( nd ) {
+  var protoPipe = Object.getPrototypeOf( nd ).pipe
+  var oldShouldProceed = nd.shouldProceed
+
+  if( ! ( typeof oldShouldProceed === 'function' ) )
+    oldShouldProceed = null
 
   function pipe ( s ) {
-    proto.pipe.call( this, arguments )
-
-    this.on('pipe-state-change', onPipeStateChange.bind(s) )
+    nd.on( CONST.events.EVENT_STATE_CHANGED, function(){ return s.onPipeStateChange.apply(s , arguments ) } )
+    return protoPipe.apply( this, arguments )
   }
 
-  proto.shouldProceed = shouldProceed
-  s.onPipeStateChange = onPipeStateChange
-}
+  function onPipeStateChange ( state ) {
+    this.state = state
+    this.emit( CONST.events.EVENT_STATE_CHANGED, state )
+  }
 
-function onPipeStateChange ( state ) {
-  this.state = state
-  this.emit('pipe-state-change', state)
-}
+  function shouldProceed () {
+    var procceed = oldShouldProceed && oldShouldProceed.apply(this, arguments)
+    return proceed && this.state !== CONST.states.PIPE_STATE_CLOSED && this.state !== CONST.states.PIPE_STATE_ERROR
+  }
 
-function shouldProceed () {
-  var custom = typeof this._shouldProceed
-  return this.state !== 'closed' && this.state !== 'error'
+  nd.pipe = pipe
+  nd.shouldProceed = shouldProceed
+  nd.onPipeStateChange = onPipeStateChange
+
 }

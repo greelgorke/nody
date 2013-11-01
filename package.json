@@ -15,5 +15,11 @@
     "utils"
   ],
   "author": "greelgorke <greelgorke@gmail.com> (http://greelgorke.tumblr.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies":{
+
+  },
+  "devDependencies":{
+    "mocha":"*"
+  }
 }
