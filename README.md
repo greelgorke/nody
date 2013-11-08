@@ -2,6 +2,8 @@
 
 A toolkit for streaming architecture.
 
+**WORK IN PROGRESS**
+
 ## Fun
 This project is in very first place for my personal fun. BUT! It's also supposed to be a toolkit, that helps you to think in Node.js paradigm of small and simple but powerful modules. It should show you the way to think different about your node application architecture.
 
