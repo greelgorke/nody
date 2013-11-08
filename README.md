@@ -1,14 +1,11 @@
-# Ninja-Dragon
+# Nody
 
 A toolkit for streaming architecture.
 
 ## Fun
-
-Ninjas are cool, dragons are fun. Ninja-Dragons are both. And you can ride them.
+This project is in very first place for my personal fun. BUT! It's also supposed to be a toolkit, that helps you to think in Node.js paradigm of small and simple but powerful modules. It should show you the way to think different about your node application architecture.
 
 ## What's that?
-
-This is my fun project. But it is also considered to be productive as well. I hope it helps me and you to reconsider the way how we build Node.js apps and causes a mind switch.
 
 The idea is to step back and to look at the apps as a collection of data transformations, which are chained and dispatched. Usual http server is a transformer of `http.IncomingMessage` -> `http.ServerResponse`. The notation is inspired by Haskell, so `->` is a function. This function can be defined as a row of sub-functions. So a webserver might be that:
 
