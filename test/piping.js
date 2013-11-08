@@ -1,7 +1,7 @@
 var stream = require('stream')
 var assert = require('assert')
 
-var piping = require('../piping')
+var piping = require('../lib/piping')
 
 
 describe('piping', function() {

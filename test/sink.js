@@ -1,7 +1,7 @@
 var assert = require('assert')
 var stream = require('stream')
 
-var sink = require('../sink')
+var sink = require('../lib/sink')
 
 describe('sink', function() {
 

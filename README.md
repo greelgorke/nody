@@ -15,14 +15,24 @@ The idea is to step back and to look at the apps as a collection of data transfo
 
 and so on.
 
-This toolkit is supposed to help you to translate this functions into streams. So your server would look like this:
+This toolkit is supposed to help you to translate this functions into streams. So your aplication may look like this:
 
-    app
-      .pipe(parser)
-      .pipe(router)
-        .route(routeTransformer)
-        .route(otherRouteTransformer)
-      .pipe(responder)
-    .pipe(app)
+    consumer
+      .pipe(parserNode)
+      .pipe(validator)
+      .pipe(brancher)
+        .to(branch1Nody)
+        .to(branch2Nody)
+      .pipe(merger)
+    .pipe(sinker)
 
-Of course you will not find everything here. But you could easily create your own streams with this toolkit. Also there are some extensions.
+Of course you will not find everything here. But you could easily create your own streams with this toolkit. Also there are/will be some extensions.
+
+## Install
+
+currently not to install from public npm. if you want to try it out, you can just install from github:
+
+```
+npm install greelgorke/nody.git
+
+```

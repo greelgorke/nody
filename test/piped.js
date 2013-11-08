@@ -1,5 +1,5 @@
 var assert = require('assert')
-var piped = require('../piped')
+var piped = require('../lib/piped')
 
 describe( 'piped', function(){
   it('should create an object', function(){

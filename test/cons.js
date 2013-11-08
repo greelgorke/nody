@@ -1,7 +1,7 @@
 var assert = require('assert')
 var stream = require('stream')
 
-var cons = require('../cons')
+var cons = require('../lib/cons')
 
 
 describe('cons', function() {

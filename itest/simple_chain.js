@@ -1,8 +1,8 @@
 var assert = require('assert')
 
-var cons = require('../cons')
-var sink = require('../sink')
-var nody = require('../nody')
+var cons = require('../lib/cons')
+var sink = require('../lib/sink')
+var nody = require('../lib/nody')
 
 describe('happy path', function() {
   it('should not fail by passing', function(done) {

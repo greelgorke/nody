@@ -1,8 +1,8 @@
 var assert = require('assert')
-var piped = require('../piped')
+var piped = require('../lib/piped')
 
 
-var nody = require('../nody')
+var nody = require('../lib/nody')
 
 
 describe('nody', function() {
