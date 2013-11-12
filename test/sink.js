@@ -1,5 +1,6 @@
 var assert = require('assert')
 var stream = require('stream')
+var piped = require('../lib/piped')
 
 var sink = require('../lib/sink')
 
@@ -14,7 +15,7 @@ describe('sink', function() {
         done()
       }
 
-      _sink.write([contextProvided])
+      _sink.write( piped( contextProvided ) )
       _sink.end()
     })
 })

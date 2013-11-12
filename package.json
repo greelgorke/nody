@@ -2,7 +2,7 @@
   "name": "nody",
   "version": "0.0.0",
   "description": "Toolkit for streaming architecture",
-  "main": "index.js",
+  "main": "nody.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha test -R spec -u bdd",
     "itest": "./node_modules/.bin/mocha itest -R spec -u bdd"
