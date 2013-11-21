@@ -21,7 +21,7 @@ describe('merge', function() {
     })
 
     it('should not keep track of piped streams', function() {
-      var _merge = merge.takeFirstMerge()
+      var _merge = merge( merge.strategies.firstWins, 1 )
       var pt1 = new stream.PassThrough({objectMode:true})
       var pt2 = new stream.PassThrough({objectMode:true})
       pt1.pipe(_merge)
@@ -48,7 +48,7 @@ describe('merge', function() {
           assert.fail()
         }
 
-        var _merge = merge(assertingMerger, null, function(){ return false })
+        var _merge = merge(assertingMerger, function(){ return false })
 
         _merge.on('readable', function(){
           assert.fail()
@@ -72,7 +72,7 @@ describe('merge', function() {
           done()
         }
         var mergeCheck = function(){ return true }
-        var _merge = merge( assertingMerger, null, mergeCheck )
+        var _merge = merge( assertingMerger, mergeCheck )
 
         _merge.on('readable', function(){
           var res = _merge.read()
@@ -99,7 +99,7 @@ describe('merge', function() {
           done()
         }
 
-        var _merge = merge(assertingMerger, null, function(){return true})
+        var _merge = merge(assertingMerger, function(){return true})
 
         pt1.pipe(_merge)
 
@@ -120,7 +120,7 @@ describe('merge', function() {
           done()
         }
 
-        var _merge = merge(assertingMerger, 2, merge.checkers.waitForAll)
+        var _merge = merge( assertingMerger, 2 )
 
         pt1.pipe(_merge)
 
@@ -139,7 +139,7 @@ describe('merge', function() {
           callback( null, [ arr1[0] + arr2[0], arr1[1] + arr2[1] ] )
         }
 
-        var _merge = merge(merger, 3, merge.checkers.waitForAll)
+        var _merge = merge( merger, 3 )
 
         _merge.on('readable', function(){
           var res = _merge.read()
@@ -154,6 +154,22 @@ describe('merge', function() {
         pt1.write(item1)
 
       })
+    })
+  })
+  describe.only('threshhold', function() {
+    it('should emit threshhold event', function(done) {
+      var _merge = merge(merge.strategies.lastWins, 4)
+      var foo = piped('foo')
+      var bar = piped('bar')
+
+
+      _merge.onThreshhold( 1, function(cache){
+        assert( Array.isArray(cache) )
+        assert.equal( 2, cache.length )
+        done()
+      })
+      _merge.write( foo )
+      _merge.write( bar )
     })
   })
 })
