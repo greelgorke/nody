@@ -156,7 +156,7 @@ describe('merge', function() {
       })
     })
   })
-  describe.only('threshhold', function() {
+  describe('threshhold', function() {
     it('should emit threshhold event', function(done) {
       var _merge = merge(merge.strategies.lastWins, 4)
       var foo = piped('foo')

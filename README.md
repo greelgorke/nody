@@ -2,6 +2,8 @@
 
 A toolkit for streaming architecture.
 
+**TODO: add ci here
+
 ## Fun
 This project is in very first place for my personal fun. BUT! It's also supposed to be a toolkit, that helps you to think in Node.js paradigm of small and simple but powerful modules. It should show you the way to think different about your node application architecture.
 
@@ -37,9 +39,19 @@ npm install greelgorke/nody.git
 
 ```
 
+## Tests
+
+```
+npm test
+```
+
+## Contribute
+
+If you want to contribute, fork this repo, do your thing and make a pull request. When you want to code, please take a look at CONTRIBUTE file.
+
 ## Usage
 
-it's quite simple.
+it's quite simple. You can find some examples in [examples](examples).
 
 ### Nody
 
@@ -153,14 +165,14 @@ shouldMergeCheck.call(null, payloadVersionsArray, numberOfInputPipes)
 `payloadVersionsArray` in this case is an array of arrays. you can introspect different constrains or just compare the length of this array with the numberOfInputPipes. or you can do whatever you want, as long as it's synchronous. The shouldMergeCheck function have to return a boolean value.
 
 
-### Subnode
+### Wrap
 
 This is the last stream from the toolbelt and can be used to plug in a secondary pipeline.
 
 ```javascript
-var sub = nody.subnode(consumer, producer1, producer2)
+var wrap = nody.wrap(consumer, producer1, producer2)
 
-someotherStream.pipe(sub).pipe(anotherOtherStream)
+someotherStream.pipe(wrap).pipe(anotherOtherStream)
 ```
 
-To create a subnode you have to pass at least one stream which will consume the payload and zero or more producer streams, which will produce it.
+To create a wrap you have to pass at least one stream which will consume the payload and zero or more producer streams, which will produce it.

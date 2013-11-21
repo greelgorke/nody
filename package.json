@@ -4,8 +4,8 @@
   "description": "Toolkit for streaming architecture",
   "main": "nody.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha test -R spec -u bdd",
-    "itest": "./node_modules/.bin/mocha itest -R spec -u bdd"
+    "test": "./node_modules/.bin/mocha test -R min -u bdd",
+    "ci": "./node_modules/.bin/mocha itest -R xunit -u bdd"
   },
   "keywords": [
     "stream",
