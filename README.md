@@ -132,7 +132,7 @@ myCond.pipe(matchFn1, stream1)
 myCond.pipe(matchFn2, stream2)
 ```
 
-the order of this pipes is significant. When `cond` receives payload it calls the match functions in the same way as processor function in `node` and expects an optional error object or a boolean value.
+the order of this pipes is significant. When `cond` receives payload it calls the match functions in the same way as processor function in `node` and expects a boolean value passed to the callback.
 
 It is also possible to just pipe a stream. In this case this stream is a catch-all stream. It will get every payload passing the `cond` stream. This almost to ensure compatibility with the core api.
 
@@ -176,3 +176,7 @@ someotherStream.pipe(wrap).pipe(anotherOtherStream)
 ```
 
 To create a wrap you have to pass at least one stream which will consume the payload and zero or more producer streams, which will produce it.
+
+## License
+
+MIT
