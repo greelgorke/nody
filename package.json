@@ -1,6 +1,6 @@
 {
   "name": "nody",
-  "version": "0.0.1-alpha",
+  "version": "0.0.2",
   "description": "Toolkit for streaming architecture",
   "main": "nody.js",
   "scripts": {
@@ -16,9 +16,8 @@
   ],
   "author": "greelgorke <greelgorke@gmail.com> (http://greelgorke.tumblr.com)",
   "license": "MIT",
-  "dependencies":{
-  },
-  "devDependencies":{
-    "mocha":"*"
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*"
   }
 }
