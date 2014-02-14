@@ -17,7 +17,6 @@
   "author": "greelgorke <greelgorke@gmail.com> (http://greelgorke.tumblr.com)",
   "license": "MIT",
   "dependencies":{
-    "debug": "*"
   },
   "devDependencies":{
     "mocha":"*"

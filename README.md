@@ -32,10 +32,8 @@ Of course you will not find everything here. But you could easily create your ow
 
 ## Install
 
-currently not to install from public npm. if you want to try it out, you can just install from github:
-
 ```javascript
-npm install greelgorke/nody.git
+npm install nody
 
 ```
 
