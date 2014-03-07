@@ -1,6 +1,6 @@
 {
   "name": "nody",
-  "version": "0.0.2-alpha",
+  "version": "0.0.3-alpha",
   "description": "Toolkit for streaming architecture",
   "main": "nody.js",
   "scripts": {
@@ -16,6 +16,17 @@
   ],
   "author": "greelgorke <greelgorke@gmail.com> (http://greelgorke.tumblr.com)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/greelgorke/nody.git"
+  },
+  "bugs": {
+    "url": "https://github.com/greelgorke/nody/issues",
+    "email":"greelgorke@gmail.com"
+  },
+  "engines": {
+    "node" : "0.10.X"
+  },
   "dependencies": {},
   "devDependencies": {
     "mocha": "*"
