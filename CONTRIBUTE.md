@@ -1,6 +1,7 @@
 # Few rules to keep collaboration enjoyable:
 
 first go to your console and type `npm help npm-coding-style`. read it. then look at my code. then the rest here (i don't stick with all npm style):
+
 * every variable _definition_ desires a `var`.
 * variable declarations are summed up in single `var`.
 * coma first only in objects and arrays. indent stuff accordingly.
