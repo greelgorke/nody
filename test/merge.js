@@ -163,7 +163,7 @@ describe('merge', function() {
       var bar = piped('bar')
 
 
-      _merge.onThreshhold( 1, function(cache){
+      _merge.onThreshold( 1, function(cache){
         assert( Array.isArray(cache) )
         assert.equal( 2, cache.length )
         done()
